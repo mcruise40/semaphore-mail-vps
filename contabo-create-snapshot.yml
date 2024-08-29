@@ -6,13 +6,13 @@
 
 - name: Login to an API
   uri:
-    url: https://auth.example.com/oauth/access_token
-    method: POST
+    url: https://auth.contabo.com/auth/realms/contabo/protocol/openid-connect/token
+    method: GET
     body_format: json
     body:
-      name: your_username
-      password: your_password
-      client_id: YOUR_CLIENT_ID
-      access_token: ACCESS_TOKEN
+      name: { contabo_username }
+      password: { contabo_password }
+      client_id: { contabo_clientId }
+      client_secret: { contabo_clientSecret }
       connection: CONNECTION
       scope: SCOPE
