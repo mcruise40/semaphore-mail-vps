@@ -1,1 +1,10 @@
-
+---
+- name: Perform check for updates with MailCow update script
+  hosts: mail_servers
+  tasks:
+  - name: change to MailCow directory
+    comamnd: cd {{ mailcow_directory }}
+  - name: run update.sh with --check parameter
+    command: ./update.sh --check
+    register: updates
+  - debug: var=updates.stdout_lines
