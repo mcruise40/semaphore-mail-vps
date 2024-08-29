@@ -3,7 +3,7 @@
   hosts: mail_servers
   tasks:
   - name: change to MailCow directory
-    command: cd {{ mailcow_directory }}
+    command: chdir={{ mailcow_directory }}
   - name: run update.sh with --check parameter
     command: ./update.sh --check
     register: updates
