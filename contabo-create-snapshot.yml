@@ -13,6 +13,6 @@
       name: {{ contabo_username }}
       password: {{ contabo_password }}
       client_id: {{ contabo_clientId }}
-      client_secret: { contabo_clientSecret }}
+      client_secret: {{ contabo_clientSecret }}
       connection: CONNECTION
       scope: SCOPE
