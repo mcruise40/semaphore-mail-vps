@@ -1,8 +1,9 @@
 ---
 - name: Perform check for updates with MailCow update script
   hosts: mail_servers
+  become: true
   tasks:
   - name: change to MailCow directory and run update.sh with --check parameter
-    command: chdir={{ mailcow_directory }} sudo ./update.sh --check
+    command: chdir={{ mailcow_directory }} ./update.sh --check
     register: updates
   - debug: var=updates.stdout_lines
