@@ -1,0 +1,10 @@
+---
+- name: Perform full APT upgrade
+  hosts: all
+
+  tasks:
+  - name: Upgrade all installed packages
+    apt:
+      upgrade: dist
+      force_apt_get: yes
+      autoremove: yes
