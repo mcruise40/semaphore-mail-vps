@@ -1,5 +1,5 @@
 ---
-- name: Perform full APT upgrade
+- name: Perform update of APT cache
   hosts: mail_servers
   become: true
   tasks:
