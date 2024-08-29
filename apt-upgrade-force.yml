@@ -1,7 +1,7 @@
 ---
 - name: Perform full APT upgrade
-  hosts: all
-
+  hosts: mail_servers
+  become: true
   tasks:
   - name: Upgrade all installed packages
     apt:
