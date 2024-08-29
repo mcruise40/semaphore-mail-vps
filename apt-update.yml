@@ -7,3 +7,7 @@
     apt:
       update_cache: yes
       cache_valid_time: 3600
+  - name:
+    command: apt list --upgradable
+    register: updates
+  - debug: var=updates.stdout_lines
