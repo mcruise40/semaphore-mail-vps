@@ -6,4 +6,5 @@
   - name: change to MailCow directory and run update.sh with --check parameter
     command: chdir={{ mailcow_directory }} ./update.sh --check
     register: updates
+    ignore_errors: true
   - debug: var=updates.stdout_lines
